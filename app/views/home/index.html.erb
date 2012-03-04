@@ -1,9 +1,34 @@
 <h1>Calendar API</h1>
 
-<%= form_tag do %>
+<%= form_tag("/createEvent", :method => "get") do %>
   <%= label_tag(:eventName, "Event Name"); %>
-  <%= text_field_tag(:eventName) %>
-  <%= submit_tag("Create Event!"); %>
+  <%= text_field_tag(:eventName) %> <br />
+
+  <%= label_tag(:start_time, "Time"); %> 
+  <%= text_field_tag(:start_time) %> <br />
+
+  <%= label_tag(:start_month, "Month"); %>
+  <%= text_field_tag(:start_month) %>
+
+  <%= label_tag(:start_day, "Day"); %>
+  <%= text_field_tag(:start_day) %> 
+
+  <%= label_tag(:start_year, "Year"); %>
+  <%= text_field_tag(:start_year) %> <br />
+
+  <%= label_tag(:end_time, "Time"); %> 
+  <%= text_field_tag(:time) %> <br />
+
+  <%= label_tag(:end_month, "Month"); %>
+  <%= text_field_tag(:end_month) %>
+
+  <%= label_tag(:end_day, "Day"); %>
+  <%= text_field_tag(:end_day) %> 
+
+  <%= label_tag(:end_year, "Year"); %>
+  <%= text_field_tag(:end_day) %>
+
+  <%= submit_tag("Create Event!"); %> <br />
 <% end %>
 
 
