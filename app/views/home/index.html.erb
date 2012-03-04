@@ -1,73 +1,73 @@
 <h1>Calendar API</h1>
 
 <%= form_tag("/createEvent", :method => "get") do %>
-  <div class="label">
-    <%= label_tag(:eventName, "Event Name"); %>
-  </div>
-  <div class="field">
-    <%= text_field_tag(:eventName) %> <br />
+  <div id="event_header">
+
+    <div id="event_name">
+      <div class="label">
+        <%= label_tag(:event_name, "Event name"); %>
+      </div>
+      <div class="field">
+        <%= text_field_tag(:event_name) %> <br />
+      </div>
+    </div>
+
+    <div id="event_description">
+      <div class="label">
+        <%= label_tag(:event_description, "Event descripition"); %>
+      </div>
+      <div class="field">
+        <%= text_field_tag(:event_description) %> <br />
+      </div>
+    </div>
+
   </div>
 
-  <p>Event start</p>
+  <div id="event_start">
+    <h2>Event start</h2>
 
-  <div class="label">
-    <%= label_tag(:start_time, "Time"); %> 
-  </div>
-    <%= text_field_tag(:start_time) %> <br />
-  <div class="field">
+    <div class="field">
+      <%= text_field_tag(:start_time, '', :placeholder => 'time') %> <br />
+    </div>
 
-  <div class="label">
-    <%= label_tag(:start_month, "Month"); %>
-  </div>
-  <div class="field">
-    <%= text_field_tag(:start_month) %>
-  </div>
+    <div class="field">
+      <%= text_field_tag(:start_month, '', :placeholder => 'month') %>
+    </div>
 
-  <div class="label">
-    <%= label_tag(:start_day, "Day"); %>
-  </div>
-  <div class="field">
-    <%= text_field_tag(:start_day) %> 
+    <div class="field">
+      <%= text_field_tag(:start_day, '', :placeholder => 'day') %> 
+    </div>
+
+    <div class="field">
+      <%= text_field_tag(:start_year, @current_year, :placeholder => 'year') %> <br />
+    </div>
   </div>
 
-  <div class="label">
-    <%= label_tag(:start_year, "Year"); %>
-  </div>
-  <div class="field">
-    <%= text_field_tag(:start_year) %> <br />
+  <div id="event_end">
+    <h2>Event end</h2>
+
+    <div class="field">
+      <%= text_field_tag(:end_time, '', :placeholder => 'time') %> <br />
+    </div>
+
+    <div class="field">
+      <%= text_field_tag(:end_month, '', :placeholder => 'month') %>
+    </div>
+
+    <div class="field">
+      <%= text_field_tag(:end_day, '', :placeholder => 'day') %> 
+    </div>
+
+    <div class="field">
+      <%= text_field_tag(:end_year, @current_year, :placeholder => 'year') %> <br />
+    </div>
   </div>
 
-  <p>Event End</p>
-
-  <div class="label">
-    <%= label_tag(:end_time, "Time"); %> 
-  </div>
-  <div class="field">
-    <%= text_field_tag(:end_time) %> <br />
-  </div>
-
-  <div class="label">
-  <%= label_tag(:end_month, "Month"); %>
-  <div class="field">
-  <%= text_field_tag(:end_month) %>
-
-  <div class="label">
-    <%= label_tag(:end_day, "Day"); %>
-  </div>
-  <div class="field">
-    <%= text_field_tag(:end_day) %> 
-
-  <div class="label">
-    <%= label_tag(:end_year, "Year"); %>
-  </div>
-  <div class="field">
-    <%= text_field_tag(:end_day) %> <br />
-  </div>
-
-  <div class="submit"> 
-    <%= submit_tag("Create Event!"); %> <br />
-  </div>
+    <div class="submit"> 
+      <%= submit_tag("Create Event!"); %> <br />
+    </div>
 <% end %>
+
 
 
 <!--
