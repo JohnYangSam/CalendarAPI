@@ -1,4 +1,22 @@
 class CalendarController < ApplicationController
+  # create embed => embed => popup
+  
+  def popup
+    opts = get_params 
+
+    @title = opts[:tt]
+    @url = googlecalendar_url opts
+    @datestring = Time.new(opts[:sy],opts[:sm], opts[:sd]).strftime("5:00pm, %A, %B %C, %Y ")
+    
+    render layout: false
+  end
+  
+  def embed 
+    opts = get_params
+    
+    @url = popup_url opts
+  end
+  
   def googlecalendar
     sy = params[:sy].to_i
     sm = params[:sm].to_i
@@ -43,4 +61,9 @@ class CalendarController < ApplicationController
     # render :text => options.inspect
     redirect_to "http://www.google.com/calendar/event?" + opt
   end
+
+  private
+  # reads params into a hash
+
+
 end

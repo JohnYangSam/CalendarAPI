@@ -49,7 +49,10 @@ CalendarAPI::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   
-  match 'cal/to/google' => 'calendar#googlecalendar'
+  match 'createEvent' => 'home#generate', :as => 'generate'
+  match 'cal/popup' => 'calendar#popup', :as => 'popup'
+  match 'cal/embed' => 'calendar#embed', :as => 'embed'
+  match 'cal/to/google' => 'calendar#googlecalendar', :as => 'googlecalendar'
   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"

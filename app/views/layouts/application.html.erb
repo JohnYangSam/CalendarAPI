@@ -6,7 +6,8 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class='<%= "x-#{params[:controller]}-#{params[:action]}" %>'>
+  <div id='header'>Calendar API</div>
 <div id='container'>
 <%= yield %>
 </div>
