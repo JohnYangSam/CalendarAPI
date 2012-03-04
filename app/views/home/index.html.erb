@@ -1,9 +1,16 @@
+<p style='border-bottom: 2px solid #aaa; padding-bottom: 40px; margin-bottom: 30px'>The Calendar API allows you to create easy to use buttons for people to add things to their calendar</p>
 
+<div style='float:right; padding: 10px; background: #fafafa'>
+<p style='margin: 0'>Example:</p><br />
+<div><script src='/cal/embed?sd=4&sm=10&st=5%3A00pm&sy=2012&tt=foo+event'></script>
+</div>
+
+</div>
 <%= form_tag("/createEvent", :method => "get") do %>
   <div id="event_header">
 
     <div id="event_name">
-      <div class="label">
+      <div style='font-size: 1.2em; font-weight: bold; width: 130px'class="label">
         <%= label_tag(:event_name, "Event name"); %>
       </div>
       <div class="field">
@@ -23,7 +30,7 @@
   </div>
 
   <div id="event_start">
-    <h2>Event start</h2>
+    <h2>Event Detail</h2>
 
     <div class="field">
       <%= text_field_tag(:start_time, '', :placeholder => 'time') %> <br />
@@ -41,28 +48,28 @@
       <%= text_field_tag(:start_year, @current_year, :placeholder => 'year') %> <br />
     </div>
   </div>
+  <!-- 
+    <div id="event_end">
+      <h2>Event end</h2>
 
-  <div id="event_end">
-    <h2>Event end</h2>
+      <div class="field">
+        <%= text_field_tag(:end_time, '', :placeholder => 'time') %> <br />
+      </div>
 
-    <div class="field">
-      <%= text_field_tag(:end_time, '', :placeholder => 'time') %> <br />
-    </div>
+      <div class="field">
+        <%= text_field_tag(:end_month, '', :placeholder => 'month') %>
+      </div>
 
-    <div class="field">
-      <%= text_field_tag(:end_month, '', :placeholder => 'month') %>
-    </div>
+      <div class="field">
+        <%= text_field_tag(:end_day, '', :placeholder => 'day') %> 
+      </div>
 
-    <div class="field">
-      <%= text_field_tag(:end_day, '', :placeholder => 'day') %> 
-    </div>
-
-    <div class="field">
-      <%= text_field_tag(:end_year, @current_year, :placeholder => 'year') %> <br />
-    </div>
-  </div>
-
-    <div class="submit"> 
+      <div class="field">
+        <%= text_field_tag(:end_year, @current_year, :placeholder => 'year') %> <br />
+      </div>
+    </div> -->
+  
+    <div style='clear: both' class="submit"> 
       <%= submit_tag("Create Event!"); %> <br />
     </div>
 <% end %>
