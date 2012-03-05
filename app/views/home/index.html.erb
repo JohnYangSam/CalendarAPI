@@ -1,7 +1,7 @@
 <p style='border-bottom: 2px solid #aaa; padding-bottom: 40px; margin-bottom: 30px'>The Calendar API allows you to create easy to use buttons for people to add things to their calendar</p>
 
 <div style='float:right; padding: 10px; background: #fafafa'>
-<p style='margin: 0'>Example:</p><br />
+<p style='margin: 0'>Example:</p>
 <div><script src='/cal/embed?sd=4&sm=10&st=5%3A00pm&sy=2014&tt=CalendarAPI+Event'></script>
 </div>
 
@@ -34,12 +34,9 @@
       <%= text_field_tag(:start_time, '', :placeholder => 'time') %> <br />
     </div>
 
-    <div class="field">
-      <%= text_field_tag(:start_month, '', :placeholder => 'month') %>
-    </div>
-
-    <div class="field">
-      <%= text_field_tag(:start_day, '', :placeholder => 'day') %> 
+    <div class="field" style='width: 200px'>
+      <%= select_tag :start_month, options_for_select(1.upto(12).collect {|i| [Date::MONTHNAMES[i], i]}) %>
+      <%= text_field_tag(:start_day, '', :placeholder => 'day', :style => 'width: 80px; float: right') %> 
     </div>
 
     <div class="field">

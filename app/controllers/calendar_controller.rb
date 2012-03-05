@@ -6,7 +6,7 @@ class CalendarController < ApplicationController
 
     @title = opts[:tt]
     @url = googlecalendar_url opts
-    @datestring = Time.new(opts[:sy],opts[:sm], opts[:sd]).strftime("%A, %B %C, %Y ")
+    @datestring = Time.new(opts[:sy],opts[:sm], opts[:sd]).strftime("%A, %B %d, %Y ")
     
     @datestring = params[:st] + ", "+ @datestring if params[:st]
       

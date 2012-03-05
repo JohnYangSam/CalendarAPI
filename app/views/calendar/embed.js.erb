@@ -1,10 +1,10 @@
 <%
 the_id = "capi_#{(Time.now.to_i*rand).to_i}"
-style = "font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; color: #333; font-size: 12px;  padding: 5px; font-weight: 500;"
+style = "display: inline-block; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; color: #333; font-size: 12px;  margin: 5px; padding: 5px; font-weight: 500;"
 script = "window.open(this.href,'capi_add','height=300,width=400,scrollbars=no,resizable=no');return false;"
 %>
 
-document.write("<a class='button' href='<%= @url %>' style=\"<%= style %>\" target='_blank' onclick=\"<%= script %>\" id='<%= the_id %>'>+ <img style='display: inline-block; margin: 0 5px;' src='<%= root_url %>/images/cal.png' />Add To Calendar</a>");
+document.write("<a class='button' href='<%= @url %>' style=\"<%= style %>\" target='_blank' onclick=\"<%= script %>\" id='<%= the_id %>'>+ <img style='display: inline-block; margin: 0 5px; position: relative; top: 1px' src='<%= root_url %>/images/cal.png' />Add To Calendar</a>");
 
 <% if false %>
 // http://drnicwilliams.com/2006/11/21/diy-widgets/
