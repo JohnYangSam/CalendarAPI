@@ -1,0 +1,44 @@
+<%
+the_id = "capi_#{(Time.now.to_i*rand).to_i}"
+style = "font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; color: #333; font-size: 12px;  padding: 5px; font-weight: 500;"
+script = "window.open(this.href,'capi_add','height=300,width=400,scrollbars=no,resizable=no');return false;"
+%>
+
+document.write("<a class='button' href='<%= @url %>' style=\"<%= style %>\" target='_blank' onclick=\"<%= script %>\" id='<%= the_id %>'>+ <img style='display: inline-block; margin: 0 5px;' src='<%= root_url %>/images/cal.png' />Add To Calendar</a>");
+
+<% if false %>
+// http://drnicwilliams.com/2006/11/21/diy-widgets/
+(function() {
+  document.getElementById('<%= the_id %>').onclick = function() {
+    alert('CLICKED');
+  };
+  
+  function requestContent() {
+    var script = document.createElement('script');
+    script.src = "";
+    document.getElementsByTagName('head')[0].appendChild(script)
+  }
+
+  this.serverResponse = function( data ) {
+    if (!data || !data['files'][0]) return;
+    
+    // if target not passed
+    var dest = data['target'] ? data['target'] : "<%= the_id %>"
+    var div = document.getElementById(dest);
+    var toc = data['files']
+    
+    var theContents = "<style type='text/css'>.pancake_link_date { display: inline-block; width: 100px; }</style>";
+    for (var i=0;i< toc.length;i++) {
+      theContents += "<div class='pancake_link'>";
+      if (toc[i].length == 3)
+        theContents += "<span class='pancake_link_date'>" + toc[i][2] + "</span>";
+      theContents += "<a class='title' href='" + toc[i][1] + "'>"+toc[i][0] + "</a></div>";
+    }
+    div.innerHTML = theContents;
+    div.style.display = 'block';
+  }
+  
+  // requestContent();
+  return this;
+})();
+<% end %>

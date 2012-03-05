@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+  </head>
+  <body id='x-calendar-popup'>
+    <div id='popup_container'>
+      <div id='popup_header'>
+        Add to my calendar
+      </div>
+      <div id='popup_body'>
+        <div id='popup_top'>
+          <div id='popup_title'><%= @title %></div>
+          <div id='popup_subtitle'><%= @datestring %></div>
+        </div>
+        <a href='<%= @url %>' target='_blank' class='popup_place'>
+          <img src='/images/google_calendar.png'>
+        </a>
+        <a href='<%= @url %>' target='_blank' class='popup_place'>
+          <img src='/images/icallogo.png'>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

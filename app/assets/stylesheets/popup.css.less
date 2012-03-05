@@ -1,0 +1,112 @@
+@import 'base.less';
+input[type=submit] {
+  padding: 10px;
+  .gradient(#fff,#eee);
+  border: 1px solid #aaa;
+}
+
+#header {
+  width: 640px;
+  margin: 30px auto 20px;
+  font-size: 3em;
+    padding: 20px;
+    color: white;
+  padding-top: 80px;
+  padding-bottom: 10px;
+  background: #A3CDFF;
+
+}
+
+input[type=text], textarea {
+    border: 1px solid #ccc;
+    padding: 5px 7px;
+    width: 200px;
+    .box_shadow(inset 2px 3px 4px -3px #ccc);
+    &:focus{
+      .box_shadow(inset 2px 3px 4px -3px #aaa);
+      border-color: #999;
+      outline: none;
+    }
+}
+
+textarea {
+  font-size: 11px;
+  width: 300px;
+  font-family: 'Monaco', monospace;
+}
+
+a.button, input[type=submit] {
+  .gradient(#fff,#eee);
+  .transition(all, 50ms);
+  border: 1px solid #ddd; 
+  .corners(2px);
+  &:hover {
+    .gradient(#fff,#eaeaea);
+    border-color: #777;
+  }
+}
+
+#x-calendar-popup {
+  * { box-sizing: border-box; }
+  
+  background: #fff url(/images/furley_bg.png) repeat scroll top left;
+  
+  #popup_top {
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    #popup_title {
+      font-size: 2em;
+    }
+    #popup_subtitle {
+      color: #777;
+    }
+  }
+  
+  #popup_container {
+    height: 300px;
+    width: 400px;
+    overflow: hidden;
+  }
+  
+  #popup_header {
+    background: rgba(0,0,0,0.8);
+    color: #ccc;
+    font-size: 85%;
+    padding: 5px 10px;
+  }
+  
+  #popup_body {
+    padding: 5px;
+    .popup_place {
+      display: block;
+      height: 120px;
+      width: 185px;
+      float: left;
+      padding: 10px;
+      margin: 5px;
+      background: #fafafa;
+      cursor: pointer;
+      .transition(all);
+      .box_shadow(1px 1px 5px rgba(0,0,0,0.1));
+      &:hover {
+        .box_shadow(1px 1px 5px rgba(0,0,0,0.4));
+        .popup_hover { display: visible; }
+      }
+      text-align: center;
+      img { max-height: 100%}
+      font-size: 93%;
+      color: #333;
+      
+      position: relative;
+      .corners(4px);
+      .popup_hover {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}

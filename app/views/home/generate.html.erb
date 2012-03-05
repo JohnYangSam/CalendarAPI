@@ -1,0 +1,9 @@
+<h2>Copy this code!</h2>
+<% s = "<script src='#{embed_url @opts}'></script>" %>
+<div>
+  <%== s %>
+</div><br />
+<div>
+<textarea style='height: 100px' "share_link" id='sharelink' readonly>
+<%= s%>
+  </textarea></div>
