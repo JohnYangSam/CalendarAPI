@@ -25,7 +25,7 @@ class CalendarController < ApplicationController
     sm = params[:sm].to_i
     sd = params[:sd]
     st = params[:st]
-    sz = params[:sz] =~ /[+-]\d{2}:\d{2}/ ? params[:sz] : Time.now.strftime("%:z")
+    sz = params[:sz] =~ /[+-]\d{2}:\d{2}/ ? params[:sz] : Time.now.strftime("%:z")[0..2] +":"+Time.now.strftime("%z")[3..4]
     
     ey = params[:ey]
     em = params[:em]
