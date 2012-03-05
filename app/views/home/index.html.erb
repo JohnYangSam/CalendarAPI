@@ -2,7 +2,7 @@
 
 <div style='float:right; padding: 10px; background: #fafafa'>
 <p style='margin: 0'>Example:</p><br />
-<div><script src='/cal/embed?sd=4&sm=10&st=5%3A00pm&sy=2012&tt=foo+event'></script>
+<div><script src='/cal/embed?sd=4&sm=10&st=5%3A00pm&sy=2014&tt=CalendarAPI+Event'></script>
 </div>
 
 </div>
@@ -10,11 +10,9 @@
   <div id="event_header">
 
     <div id="event_name">
-      <div style='font-size: 1.2em; font-weight: bold; width: 130px'class="label">
-        <%= label_tag(:event_name, "Event Name"); %>
-      </div>
+        <h2><%= label_tag(:event_name, "Event Name"); %></h2>
       <div class="field">
-        <%= text_field_tag(:event_name) %> <br />
+        <%= text_field_tag(:event_name, '', :placeholder =>'My Excellent Event') %> <br />
       </div>
     </div>
 
@@ -73,3 +71,17 @@
       <%= submit_tag("Create Event!"); %> <br />
     </div>
 <% end %>
+
+
+
+<!--
+Form
+
+Event Name
+Start time
+  time, month, day, year
+End time
+  time, month, day, year
+  Description
+
+--!>
