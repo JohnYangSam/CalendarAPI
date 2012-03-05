@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     current_time = Time.new();
     @current_year = current_time.year
   end
-  
+
   def generate
     sy = params[:start_year] || Time.now.year
     sm = params[:start_month] || Time.now.month
@@ -16,7 +16,7 @@ class HomeController < ApplicationController
     ed = params[:ed]
     et = params[:et]
     ez = params[:ez]
-    
+
     @opts = {
       :sy => sy,
       :sm => sm,
